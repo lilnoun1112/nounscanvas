@@ -42,6 +42,7 @@ h1 {
   line-height: normal;
   letter-spacing: -1.28px;
   margin:0%;
+  align-self: stretch;
 }
 
 a {
@@ -73,7 +74,7 @@ a {
   }
 
 .row{
-  width: 100%;
+  width: 100vw;
   display: inline-flex;
   align-items: flex-start;
   align-content: flex-start;
@@ -162,30 +163,91 @@ a {
     background-image: url(images/arrow_w.svg);
   }
 
-  @media only screen and (min-width: 60px) and (max-width: 899px) {
+
+ 
+  @media only screen and (min-width: 1500px) {
     .tile {
-      width: calc(100% - 22.4px);
-    }
-    .row {
-      flex-direction: column;
-      flex-wrap: nowrap;
+      width: calc(20% - 22.4px);
     }
   }
-  
-  @media only screen and (min-width: 900px) and (max-width: 1199px) {
-    .tile {
-      width: calc(33% - 22.4px);
-    }
-  }
-  
+
   @media only screen and (min-width: 1200px) and (max-width: 1499px) {
     .tile {
       width: calc(25% - 22.4px);
     }
   }
-  
-  @media only screen and (min-width: 1500px) {
+
+  @media only screen and (min-width: 900px) and (max-width: 1199px) {
+
+
     .tile {
-      width: calc(20% - 22.4px);
+      width: calc(33% - 16px);
     }
+  }
+
+  @media only screen and (min-width: 600px) and (max-width: 899px) {
+
+
+    .tile {
+      width: calc(50% - 16px);
+    }
+
+    .header{
+      width: 100%;
+    display: inline-flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 16px;
+    gap: 24px;
+    }
+
+    .desc-box {
+      max-height: 1000px !important;
+      opacity: 100 !important;
+    }
+
+  }
+
+  @media only screen and (max-width: 599px) {
+
+
+    .row {
+      flex-direction: column ;
+      flex-wrap: nowrap ;
+    }
+    .tile {
+      width: calc(100% - 16px) ;
+    }
+
+    .header{
+      width: 100%;
+    display: inline-flex;
+    flex-direction: column ;
+    align-items: flex-start;
+    align-content: flex-start;
+    padding: 16px;
+    gap: 16px;
+    }
+   
+    h1 {
+      font-size: 48px;
+    }
+
+    a {
+      font-size: 32px;
+    }
+
+    .arrow{
+      margin-top: 10px;
+      background-size: cover;
+      height: 17px;
+      width: 17px;
+    }
+
+    .desc-box {
+      max-height: 1000px !important;
+      opacity: 100 !important;
+    }
+    
   }
