@@ -1,0 +1,191 @@
+html {background-color: black}
+
+.body {
+    background-color: #00000;
+}
+
+.header{
+  width: 100%;
+  display: inline-flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 16px;
+  align-items: center;
+  gap: 64px;
+  max-width: 1888px;
+ 
+}
+
+.header-item{
+  display: inline-flex;
+  align-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease-out;
+}
+
+
+.arrow{
+  margin-top: 10px;
+  background-image: url(images/arrow.svg);
+  height: 25px;
+  width: 25px;
+  transition: background-image 0.3s ease-out;
+}
+
+h1 {
+  color: #FFF;
+  font-family: "Space Grotesk";
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -1.28px;
+  margin:0%;
+}
+
+a {
+  color: #858585;
+  font-family: "Space Grotesk";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: -0.96px;
+  text-decoration-line:none;
+}
+
+
+
+.tile {
+    background-position: center;
+    background-size: 100%;
+    display: flex;
+    width:calc(20% - 22.4px);
+    height: auto;
+    padding: 8px;
+    aspect-ratio: 1 / 1;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    flex-shrink: 0;
+    transition: background-size .25s ease-out;
+  }
+
+.row{
+  width: 100%;
+  display: inline-flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-left: 16px;
+  padding-right: 16px;
+  max-width: 1888px;
+  flex-wrap: wrap;
+}
+
+  .panel {
+    display: flex;
+    padding: 8px 10px 7px 10px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    align-self: stretch;
+    border-radius: 8px;
+    background: rgba(219, 219, 219, 0.50);
+    backdrop-filter: blur(10px);
+  }
+
+  .tag {
+    align-self: stretch;
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    margin: 0px; /* Add this line to reset margins */
+  }
+
+  h2 {
+    align-self: stretch;
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 100%;
+    margin: 0px; /* Add this line to reset margins */
+  }
+
+  .desc-box {
+    display: flex;
+    height: auto;
+    max-height: 0px;
+    padding-bottom: 1px;
+    align-items: flex-end;
+    gap: 10px;
+    align-self: stretch;
+    opacity: 0;
+    transition: max-height 0.45s ease-in-out, opacity 0.3s ease-out;
+  }
+
+  .desc {
+    flex: 1 0 0;
+    color: #000;
+    font-family: "Space Grotesk";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 125%;
+    margin: 0px; /* Add this line to reset margins */
+  }
+
+  .tile:hover {
+    background-size: 120%;
+  }
+
+  .tile:hover .desc-box {
+    max-height: 1000px;
+    opacity: 100;
+  }
+
+  .tile:not(:hover) .desc-box {
+    max-height: 0px;
+    opacity: 0;
+  }
+
+  .header-item:hover {
+    color: #FFF;
+  }
+
+  .header-item:hover .arrow{
+    background-image: url(images/arrow_w.svg);
+  }
+
+  @media only screen and (min-width: 60px) and (max-width: 899px) {
+    .tile {
+      width: calc(100% - 22.4px);
+    }
+    .row {
+      flex-direction: column;
+      flex-wrap: nowrap;
+    }
+  }
+  
+  @media only screen and (min-width: 900px) and (max-width: 1199px) {
+    .tile {
+      width: calc(33% - 22.4px);
+    }
+  }
+  
+  @media only screen and (min-width: 1200px) and (max-width: 1499px) {
+    .tile {
+      width: calc(25% - 22.4px);
+    }
+  }
+  
+  @media only screen and (min-width: 1500px) {
+    .tile {
+      width: calc(20% - 22.4px);
+    }
+  }
