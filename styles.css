@@ -62,7 +62,7 @@ a {
     background-position: center;
     background-size: 100%;
     display: flex;
-    width:calc(20% - 22.4px);
+    width:calc(20% - 16px);
     height: auto;
     padding: 8px;
     aspect-ratio: 1 / 1;
