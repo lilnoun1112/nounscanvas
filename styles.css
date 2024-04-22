@@ -1,7 +1,12 @@
-html {background-color: black}
+html {background-color: var(--prim)}
+
+:root {
+  --prim: #000000;
+  --sec: #ffffff;
+}
 
 .body {
-    background-color: #00000;
+    background-color: var(--prim);
 }
 
 .header{
@@ -19,22 +24,18 @@ html {background-color: black}
 .header-item{
   display: inline-flex;
   align-content: flex-start;
-  align-items: center;
+  align-items: baseline;
   gap: 8px;
-  transition: color 0.3s ease-out;
+  height: fit-content;
+  opacity: 50%;
+  transition: opacity 0.3s ease-out;
 }
 
 
-.arrow{
-  margin-top: 10px;
-  background-image: url(images/arrow.svg);
-  height: 25px;
-  width: 25px;
-  transition: background-image 0.3s ease-out;
-}
+
 
 h1 {
-  color: #FFF;
+  color: var(--sec);
   font-family: "Space Grotesk";
   font-size: 64px;
   font-style: normal;
@@ -46,7 +47,7 @@ h1 {
 }
 
 a {
-  color: #858585;
+  color: var(--sec);
   font-family: "Space Grotesk";
   font-size: 48px;
   font-style: normal;
@@ -59,6 +60,8 @@ a {
 
 
 .tile {
+    position: relative;
+    overflow: visible;
     background-position: center;
     background-size: 100%;
     display: flex;
@@ -156,7 +159,7 @@ a {
   }
 
   .header-item:hover {
-    color: #FFF;
+    opacity: 100%;;
   }
 
   .header-item:hover .arrow{
