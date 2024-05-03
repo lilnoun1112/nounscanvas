@@ -9,6 +9,52 @@ html {background-color: var(--prim)}
     background-color: var(--prim);
 }
 
+.palette-container{
+  height: 64px;
+  width: 64px;
+  position:fixed;
+  right: 40px;
+  bottom: 40px;
+  z-index: 99;
+  border-radius: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  gap: 16px;
+  background-color: var(--sec);
+  overflow: hidden;
+}
+
+.input {
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 8px;
+  border: 2px solid var(--prim);
+  background-color: var(--sec);
+  font-family: "Space Grotesk";
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  color: var(--prim);
+  line-height: normal;
+}
+
+.palette-open{
+  height: 160px;
+  width: auto;
+  border-radius: 16px;
+}
+
+.palette-img{
+  height: 64px;
+  width: 64px;
+  position: absolute;
+  background-image: url("images/palette-empty.png");
+  cursor: pointer;
+  transition: background-image 0.3s ease-in-out
+}
+
 .header{
   width: 100%;
   display: inline-flex;
@@ -30,9 +76,6 @@ html {background-color: var(--prim)}
   opacity: 50%;
   transition: opacity 0.3s ease-out;
 }
-
-
-
 
 h1 {
   color: var(--sec);
@@ -74,6 +117,7 @@ a {
     align-items: flex-start;
     flex-shrink: 0;
     transition: background-size .25s ease-out;
+    border-radius: 4px;
   }
 
 .row{
@@ -85,6 +129,7 @@ a {
   padding-right: 16px;
   max-width: 1888px;
   flex-wrap: wrap;
+  gap: 1px;
 }
 
   .panel {
@@ -164,6 +209,12 @@ a {
 
   .header-item:hover .arrow{
     background-image: url(images/arrow_w.svg);
+  }
+
+  .palette-img:hover {
+    height: 64px;
+    width: 64px;
+    background-image: url("images/palette-rainbow.svg");
   }
 
 

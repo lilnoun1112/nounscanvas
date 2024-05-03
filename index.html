@@ -18,6 +18,82 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
+    <div class="palette-container">
+        <div style="display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-end; gap: 12px;">
+            <input type="text" id="primaryColorInput" class="input" placeholder="#000000">
+            <input type="text" id="secondaryColorInput" class="input" placeholder="#FFFFFF">
+            <div style="height: 64px; width: 64px; border-radius: 32px;">
+                <div class="palette-img"></div>
+                <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g filter="url(#filter0_b_104_7811)">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M20 12H40V16H48V20H52V24H56V36H52V40H48V44H40V52H20V48H12V44H8V24H12V20H16V16H20V12ZM12 28V32H16V28H12ZM12 36V40H16V36H12ZM48 36V28H40V36H48ZM24 44V40H20V44H24ZM32 16H28V20H32V16ZM20 24V20H24V24H20Z" fill="var(--prim)"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_b_104_7811" x="-2" y="-2" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feGaussianBlur in="BackgroundImageFix" stdDeviation="1"/>
+                    <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_104_7811"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_104_7811" result="shape"/>
+                    </filter>
+                    </defs>
+                    </svg>                    
+            </div>
+        </div>
+        
+    </div>
+<script>
+    // Get references to the input fields
+const primaryColorInput = document.getElementById('primaryColorInput');
+const secondaryColorInput = document.getElementById('secondaryColorInput');
+
+// Function to update CSS variables
+function updateColors() {
+    // Get the values from the input fields
+    const primaryColor = primaryColorInput.value.trim();
+    const secondaryColor = secondaryColorInput.value.trim();
+
+    // Check if the primary color input has at least 7 characters
+    if (primaryColor.length >= 7) {
+        // Update CSS variable for primary color
+        document.documentElement.style.setProperty('--prim', primaryColor);
+    }
+
+    // Check if the secondary color input has at least 7 characters
+    if (secondaryColor.length >= 7) {
+        // Update CSS variable for secondary color
+        document.documentElement.style.setProperty('--sec', secondaryColor);
+    }
+}
+
+// Add event listeners to input fields
+primaryColorInput.addEventListener('input', updateColors);
+secondaryColorInput.addEventListener('input', updateColors);
+
+</script>
+
+<script>
+// Get the element with the class "palette-img"
+const paletteImg = document.querySelector('.palette-img');
+
+// Add a click event listener to the palette-img element
+paletteImg.addEventListener('click', function() {
+    // Select the palette-container element
+    const paletteContainer = document.querySelector('.palette-container');
+
+    // Check if the palette-open class is already present
+    const isOpen = paletteContainer.classList.contains('palette-open');
+
+    // Toggle the class based on its current presence
+    if (isOpen) {
+        // If class is present, remove it
+        paletteContainer.classList.remove('palette-open');
+    } else {
+        // If class is not present, add it
+        paletteContainer.classList.add('palette-open');
+    }
+});
+</script>
+
     <div class="header">
         <div style="width: 100%; max-width: 447px;">
             <svg width="100%" height="68" viewBox="0 0 447 68" fill="none" xmlns="http://www.w3.org/2000/svg">
